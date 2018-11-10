@@ -1,8 +1,8 @@
-pragma solidity ^0.4.24
+pragma solidity ^0.4.24;
 
 contract LegoFinancialInvestor {
-    Address public owner;
-    Address public investedTarget;
+    address public owner;
+    address public investedTarget;
     uint private holdingShare = 0;
     uint private esekBalance = 0;
 
