@@ -1,0 +1,41 @@
+body {
+	background-color: #9804ff!important;
+}
+
+h1 {
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+	font-family: 'Montserrat', sans-serif;
+	color: #9804ff
+}
+
+h4 {
+	color: white;
+}
+
+strong {
+	color: white;
+}
+
+.form-control {
+	background-color: transparent;
+	color: white
+}
+
+.navbar {
+	background-color: white;
+	height: 150px;
+}
+
+.navbar-brand {
+	margin-left: 20px;
+	margin-top: 0px;
+}
+
+.btn {
+	background-color: transparent;
+	border-color: white;
+}
