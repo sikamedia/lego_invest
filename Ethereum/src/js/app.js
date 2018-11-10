@@ -21,7 +21,7 @@ App = {
   },
 
   initContract: function() {
-    $.getJSON('TutorialToken.json', function(data) {
+    $.getJSON('LegoSTOToken.json', function(data) {
       // Get the necessary contract artifact file and instantiate it with truffle-contract.
       var LegoSTOTokenArtifact = data;
       App.contracts.LegoSTOToken = TruffleContract(LegoSTOTokenArtifact);
@@ -43,12 +43,12 @@ App = {
   handleTransfer: function(event) {
     event.preventDefault();
 
-    var amount = parseInt($('#TTTransferAmount').val());
-    var toAddress = $('#TTTransferAddress').val();
+    var amount = parseInt($('#LSTTransferAmount').val());
+    var toAddress = $('#LSTTransferAddress').val();
 
-    console.log('Transfer ' + amount + ' TT to ' + toAddress);
+    console.log('Transfer ' + amount + ' LST to ' + toAddress);
 
-    var tutorialTokenInstance;
+    var LegoSTOTokenInstance;
 
     web3.eth.getAccounts(function(error, accounts) {
       if (error) {
@@ -58,9 +58,9 @@ App = {
       var account = accounts[0];
 
       App.contracts.LegoSTOToken.deployed().then(function(instance) {
-        tutorialTokenInstance = instance;
+        LegoSTOTokenInstance = instance;
 
-        return tutorialTokenInstance.transfer(toAddress, amount, {from: account, gas: 100000});
+        return LegoSTOTokenInstance.transfer(toAddress, amount, {from: account, gas: 100000});
       }).then(function(result) {
         alert('Transfer Successful!');
         return App.getBalances();
@@ -73,7 +73,7 @@ App = {
   getBalances: function() {
     console.log('Getting balances...');
 
-    var tutorialTokenInstance;
+    var LSTTokenInstance;
 
     web3.eth.getAccounts(function(error, accounts) {
       if (error) {
@@ -83,13 +83,13 @@ App = {
       var account = accounts[0];
 
       App.contracts.LegoSTOToken.deployed().then(function(instance) {
-        tutorialTokenInstance = instance;
+        LSTTokenInstance = instance;
 
-        return tutorialTokenInstance.balanceOf(account);
+        return LSTTokenInstance.balanceOf(account);
       }).then(function(result) {
         balance = result.c[0];
 
-        $('#TTBalance').text(balance);
+        $('#LSTBalance').text(balance);
       }).catch(function(err) {
         console.log(err.message);
       });
