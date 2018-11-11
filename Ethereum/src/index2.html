@@ -247,43 +247,24 @@ background-color: red;
     <div class="col-md-4">
       <div>
         <form id="msform">
-            <fieldset class="block1">
-                <h2 class="fs-title">How many blocks do you want to build?</h2>
-                <br>
-                <input type="text" placeholder="Quantity of blocks" />
-                <br>
-                <button class="action-button" id="showhide" class="meta-info" onclick="playVid();changeclass()" style="background-color: #4CAF50
-                " id="transferButton" type="button">Build Lego Blocks</button>
-                <a href="index2.html">
-                <button class="action-button" id="showhide" class="meta-info" style="background-color: #9804ff
-                " id="transferButton" type="button">Next step</button></a>
-            </fieldset>
-
             <!-- fieldsets -->
             <fieldset class="showhidenew">
-                <h2 class="fs-title">How many blocks do you want to build?</h2>
+                <h2 class="fs-title">Invest</h2>
                 <p>Available share tokens: 100 (ST)</p>
                 <p>Available identity tokens: 10 (IT)</p>
                 <br>
-                <input type="text" placeholder="Quantity of blocks (100 ST & 10 IT = 100 SEC)" />
+                <input type="text" placeholder="Investment of blocks (100 ST & 10 IT = 100 SEC)" />
                 <br>
-                <button class="action-button" style="background-color: #4CAF50
-                " id="transferButton" type="button">Build Lego Blocks</button>
+                <a href="index3.html">
+                <button class="action-button" id="showhide" class="meta-info" onclick="playVid();changeclass()" style="background-color: #4CAF50
+                " id="transferButton" type="button">Invest</button></a>
+                <button class="action-button" id="showhide" class="meta-info" style="background-color: #9804ff
+                " id="transferButton" type="button">Next step</button>
             </fieldset>
 
-            <fieldset class="">
-                <h2 class="fs-title">How much do you want to invest?</h2>
-                <p>There are totaly: <span id="ESEKToken"></span> &nbsp;<a>LST</a><br> </p>
-                <p>Please fill in your address and the amount of legoblocks you would like to buy</p>
-                <input type="text" name="LST" id="LSTTransferAddress" placeholder="Address"/>
-                <br>
-               <input type="text" id="LSTTransferAmount" placeholder="Amount" />
-                <input type="button" name="next" class="next action-button" value="Buy SEC"/>
-                <button class="action-button showhide" style="background-color: #4CAF50
-                " id="transferButton" type="button">Buy SEC</button>
 
-            </fieldset>
-            </fieldset>
+
+     
            </div> 
         </form>
     </div>
@@ -296,7 +277,7 @@ background-color: red;
 
      
     <div class="col-md-8">
-              <video id="myVideo" loop width="100%">
+              <video id="myVideo" autoplay loop width="100%">
                   <source src="img/1_1.mp4">
               </video>
             </div>
