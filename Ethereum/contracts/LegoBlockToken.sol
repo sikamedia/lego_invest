@@ -1,15 +1,16 @@
 pragma solidity ^0.4.24;
-import "../node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721Mintable.sol";
 
-contract LegoBlockToken is ERC721Mintable {
+import "../node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721MetadataMintable.sol";
+
+contract LegoBlockToken is ERC721MetadataMintable  {
     mapping(uint256 => uint) private _tokenPrice;
 
-    constructor () ERC721Full("LegoBlockIdentityToken", "LBIT") public {
+    constructor () ERC721Metadata("LegoBlockIdentityToken", "LBIT") {
     }
 
     function mintUniqueTokenTo(address to, uint256 tokenId, string tokenURI) public {
         super._mint(to, tokenId);
-        //super._setTokenURI(tokenId, tokenURI);
+        super._setTokenURI(tokenId, tokenURI);
     }
 
     function setTokenPrice(uint256 tokenId, uint eSek) public {
