@@ -1,5 +1,5 @@
 body {
-	background-color: #9804ff!important;
+	background-color: black!important;
 }
 
 h1 {
@@ -38,4 +38,12 @@ strong {
 .btn {
 	background-color: transparent;
 	border-color: white;
+}
+
+span {
+	color: white;
+}
+
+a {
+	color: white;
 }
