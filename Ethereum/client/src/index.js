@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Drizzle, generateStore} from "drizzle";
 import MyStringStore from "./contracts/MyStringStore.json";
+import header from "./app/components/header.jsx";
 
 //let drizzle know what contracts we what
 const options = { contracts: [MyStringStore] };

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import ReadString from "./ReadString";
-import Header from 'app/components/header.js';
+import { Navbar } from 'react-bootstrap';
 
 class App extends Component {
   state = {loading: false, drizzleSate: null};
@@ -31,18 +30,7 @@ class App extends Component {
     if (this.state.loading) return "Loading Drizzle...";
     return (
       <div id="root" className="App">
-        <head>
-          <title>Lego Invest</title>
-          <link href="css/bootstrap.min.css" rel="stylesheet"/>
-          <link href="css/style.css" rel="stylesheet"/>
-          <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet"/>
-        </head>
-        <nav className="navbar navbar-light bg-light">
-          <h2 className="navbar-brand" href="#">
-            <img src="img/BGzf.gif" width="90px" className="d-inline-block align-top"/>
-            Lego<span style="font-weight:300">invest</span>
-          </h2>
-        </nav>
+        
         <ReadString
           drizzle={this.props.drizzle}
           drizzleState={this.state.drizzleState}
@@ -51,4 +39,7 @@ class App extends Component {
   }
 }
 
+
+
 export default App;
+
