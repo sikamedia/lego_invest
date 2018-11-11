@@ -1,4 +1,4 @@
-pragma solidity ^0.4.24
+pragma solidity ^0.4.24;
 
 import "LegoBlockToken.sol";
 import "LegoBuilder.sol"
@@ -6,7 +6,7 @@ import "LegoBuilder.sol"
 contract LegoBlockOwner {
     address private owner;
     address private legoBuilderAddress;
-    LegoBlockToken private ownedBlocks = LegoBlockToken();
+    LegoBlockToken private ownedBlocks;
     uint private holdingShare = 0;
     uint private balance = 0;
 
