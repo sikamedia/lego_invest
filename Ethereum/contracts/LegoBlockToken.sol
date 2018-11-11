@@ -1,7 +1,7 @@
 pragma solidity ^0.4.24;
-import "../node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721Full.sol";
+import "../node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721Mintable.sol";
 
-contract LegoBlockToken is ERC721Full {
+contract LegoBlockToken is ERC721Mintable {
     mapping(uint256 => uint) private _tokenPrice;
 
     constructor () ERC721Full("LegoBlockIdentityToken", "LBIT") public {
