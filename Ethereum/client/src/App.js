@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ReadString from "./ReadString";
+import Header from 'app/components/header.js';
 
 class App extends Component {
   state = {loading: false, drizzleSate: null};
