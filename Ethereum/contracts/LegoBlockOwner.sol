@@ -1,13 +1,14 @@
 pragma solidity ^0.4.24;
 
-import "./LegoBlockToken.sol";
+import "LegoBlockToken.sol";
+import "LegoBuilder.sol"
 
 contract LegoBlockOwner {
-    address public owner;
-    address public investedTarget;
+    address private owner;
+    address private legoBuilderAddress;
     LegoBlockToken private ownedBlocks;
     uint private holdingShare = 0;
-    uint private esekBalance = 0;
+    uint private balance = 0;
 
     constructor () public {
         owner = msg.sender;
@@ -27,7 +28,7 @@ contract LegoBlockOwner {
 
     function invest (address to) public {
         require(msg.sender == owner);
-        investedTarget = to;
+        legoBuilderAddress = to;
         ownedBlocks.transferFrom(owner, to, 0);
         ownedBlocks.transferFrom(owner, to, 1);
         ownedBlocks.transferFrom(owner, to, 2);
@@ -38,10 +39,12 @@ contract LegoBlockOwner {
         ownedBlocks.transferFrom(owner, to, 7);
         ownedBlocks.transferFrom(owner, to, 8);
         ownedBlocks.transferFrom(owner, to, 9);
+        LegoBuilder legoBuilder = LegoBuilder(legoBuilderAddress);
+        legoBuilder.blockRxCallback(ownedBlocks);
     }
 
     function setShare (uint share) public {
-        require(msg.sender == investedTarget);
+        require(msg.sender == legoBuilderAddress);
         holdingShare = share;
     }
 
@@ -49,8 +52,12 @@ contract LegoBlockOwner {
         return holdingShare;
     }
 
-    function payback (uint esek) public {
-        require(msg.sender == investedTarget);
-        esekBalance += esek;
+    function payback (uint eSek) public {
+        require(msg.sender == legoBuilderAddress);
+        balance += eSek;
+    }
+
+    function getBalance () public returns (uint) {
+        return balance;
     }
 }

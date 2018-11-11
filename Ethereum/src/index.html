@@ -11,30 +11,32 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
   <body>
 <!-- Image and text -->
 <nav class="navbar navbar-light bg-light">
   <h2 class="navbar-brand" href="#">
-    <img src="img/BGzf.gif" width="90px" class="d-inline-block align-top">
-    Lego<span style="font-weight:300">invest</span>
+    <img src="img/BGzf.gif" width="90px" height="" class="d-inline-block align-top" alt="">
+    Lego<span style="font-weight:300 ">invest</span>
   </h2>
 </nav>
-<div class="container">
-  <div class="row">
-     <div class="col-lg-12">
-        <div class="col-lg-8">
-            <video width="100%" height="" autoplay loop>
-              <source src="video/1_1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="col-lg-4">
+
+      <div id="petsRow" class="row">
+        <div class="col-sm-6 col-sm-push-3 col-md-4 col-md-push-6">
           <div class="panel panel-default" style="background-color: transparent;">
             <div class="panel-heading">
-              <h3 class="panel-title">Invest in lego</h3>
+              <h3 class="panel-title">Invest</h3>
             </div>
             <div class="panel-body">
+              <h4>Balance</h4>
               <strong>Balance</strong>: <span id="LSTBalance"></span> LST<br/><br/>
               <h4>How much do you want to invest?</h4>
               <input type="text" class="form-control" id="LSTTransferAddress" placeholder="Address" /><br>
@@ -43,10 +45,8 @@
             </div>
           </div>
         </div>
-        </div>
       </div>
     </div>
-
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
