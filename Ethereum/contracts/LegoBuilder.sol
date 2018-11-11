@@ -1,8 +1,8 @@
 pragma solidity ^0.4.24;
 
-import "LegoBlockToken.sol";
-import "LegoBlockOwner.sol";
-import "LegoFinancialInvestor.sol";
+import "./LegoBlockToken.sol";
+import "./LegoBlockOwner.sol";
+import "./LegoFinancialInvestor.sol";
 
 contract LegoBuilder {
     address private owner;

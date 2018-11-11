@@ -1,6 +1,6 @@
 pragma solidity ^0.4.24;
 
-import "LegoBuilder.sol"
+import "./LegoBuilder.sol";
 
 contract LegoFinancialInvestor {
     address private owner;
@@ -16,7 +16,7 @@ contract LegoFinancialInvestor {
     function invest (address to) public {
         require(msg.sender == owner);
         legoBuilderAddress = to;
-        LegoBlockBuilder blockBuilder = LegoBlockBuilder(legoBuilderAddress);
+        LegoBuilder blockBuilder = LegoBuilder(legoBuilderAddress);
         blockBuilder.fundRxCallback(balance);
         balance = 0;
     }
