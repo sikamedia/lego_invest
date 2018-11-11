@@ -9,7 +9,7 @@ contract LegoBlockToken is ERC721Full {
 
     function mintUniqueTokenTo(address to, uint256 tokenId, string tokenURI) public {
         super._mint(to, tokenId);
-        super._setTokenURI(tokenId, tokenURI);
+        //super._setTokenURI(tokenId, tokenURI);
     }
 
     function setTokenPrice(uint256 tokenId, uint eSek) public {
